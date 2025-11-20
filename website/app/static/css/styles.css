@@ -1,0 +1,453 @@
+/* Сброс отступов */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Основные стили */
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+  }
+  
+  /* Верхняя панель */
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4a90e2;
+  }
+  
+  .main-menu a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .main-menu a:hover {
+    background-color: #e6f0fa;
+    color: #2b70c9;
+  }
+  
+  /* Контент */
+  .main-content {
+    padding: 30px;
+  }
+  
+  .content h2 {
+    margin-bottom: 10px;
+    color: #2b2b2b;
+  }
+  
+  .content p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  /* Галерея и фичи — как раньше */
+  .gallery {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+  }
+  
+  .gallery img {
+    width: 30%;
+    min-width: 200px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.03);
+  }
+  
+  .feature-box {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-top: 20px;
+  }
+  
+  .feature-box ul {
+    padding-left: 20px;
+  }
+  
+  .feature-box li {
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+  /* Таблица договоров */
+.contracts-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .contracts-table th, .contracts-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .contracts-table th {
+    background-color: #f0f4f8;
+    font-weight: bold;
+    color: #4a90e2;
+  }
+  
+  .contracts-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .contracts-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Форма ввода данных */
+  form {
+    margin-top: 30px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #444;
+    display: block;
+  }
+  
+  input[type="text"],
+  input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  button {
+    background-color: #4a90e2;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #3578c9;
+  }
+  /* Таблица контрагентов */
+.partners-table,
+.buildings-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.partners-table th, .partners-table td,
+.buildings-table th, .buildings-table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.partners-table th, .buildings-table th {
+  background-color: #f0f4f8;
+  font-weight: bold;
+  color: #4a90e2;
+}
+
+.partners-table tr:nth-child(even), .buildings-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.partners-table tr:hover, .buildings-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Форма ввода данных */
+form {
+  margin-top: 30px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #444;
+  display: block;
+}
+
+input[type="text"],
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+button {
+  background-color: #4a90e2;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #3578c9;
+}
+
+/* Стили формы задач */
+form {
+    margin-top: 20px;
+  }
+  
+  input[type="text"],
+  input[type="date"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #125ca1;
+  }
+  
+  .logo-block {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logoi {
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
+  }
+  
+  footer {
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 14px;
+    color: #555;
+    border-top: 1px solid #ddd;
+  }
+
+ .quality {
+    margin-bottom: 40px;
+  }
+  
+.section {
+  margin-top: 40px;
+}
+
+.section h2 {
+  color: #1a73e8;
+}
+
+.highlight ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.highlight li {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+/* Контакты */
+.contact {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+/* Футер */
+footer {
+  background-color: #e9f0f6;
+  text-align: center;
+  padding: 20px;
+  color: #555;
+  margin-top: 50px;
+  font-size: 14px;
+}
+
+/* Страница входа */
+.login-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  background-color: #f9fcff;
+}
+
+.login-container {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+.login-container h2 {
+  text-align: center;
+  color: #1a73e8;
+  margin-bottom: 20px;
+}
+
+.login-container label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #333;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #1a73e8;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-container button:hover {
+  background-color: #155bc1;
+}
+.contract-card-main {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #f4f8fc;
+}
+
+.contract-card {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 16px;
+  max-width: 700px;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  line-height: 1.6;
+}
+
+.contract-card h2 {
+  color: #1a73e8;
+  margin-bottom: 20px;
+}
+
+.contract-card p {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.contract-card strong {
+  color: #333;
+}
+
+/* Стили для пагинации */
+.paginations {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+.paginations a {
+  background-color: #1976d2;
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.paginations a:hover {
+  background-color: #13355e;
+}
+
+.paginations span {
+  color: #555;
+}

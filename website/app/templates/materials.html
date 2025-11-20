@@ -1,0 +1,47 @@
+{%extends 'base.html'%}
+{%block title %}Материалы{%endblock%}
+{%block content%}
+{% load static %}
+  <main>
+    <h2>Каталог строительных материалов</h2>
+    <p>Здесь представлены основные материалы, находящиеся на складе компании, с актуальными остатками и ценами.</p>
+    <table class="partners-table">
+      <tr>
+        <th>Наименование</th>
+        <th>Код</th>
+        <th>Цена за ед. (₽)</th>
+      </tr>
+      <tr>
+        <td>Цемент М500</td>
+        <td>1202332</td>
+        <td>450</td>
+      </tr>
+      <tr>
+        <td>Кирпич строительный</td>
+        <td>3200213</td>
+        <td>12</td>
+      </tr>
+      <tr>
+        <td>Арматура 12 мм</td>
+        <td>780213</td>
+        <td>65</td>
+      </tr>
+    </table>
+    <h3>Добавить новый материал</h3>
+      <form action="#" method="post">
+        <div class="form-group">
+          <label for="contract-number">Наименование материала</label>
+          <input type="text" id="material-number" name="material-number" required>
+        </div>
+        <div class="form-group">
+          <label for="contract-name">Код материала</label>
+          <input type="text" id="material-name" name="material-name" required>
+        </div>
+        <label for="priority">Тип:</label><br />
+        <select id="priority" name="priority">
+          <option value="mat">Материал</option>
+          <option value="uslug">Услуга</option>
+        </select><br /><br />
+        <button type="submit">Сохранить</button>
+  </main>
+  {%endblock%}

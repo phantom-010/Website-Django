@@ -1,0 +1,73 @@
+{%extends 'base.html'%}
+{%block title %}Добавить задачу{%endblock%}
+{%block content%}
+{% load static %}
+  <main>
+    <h2>Добавление задачи бухгалтерии</h2>
+    <p>Используйте эту форму для постановки новой задачи бухгалтерскому отделу.</p>
+
+    <table class="contracts-table">
+      <thead>
+        <tr>
+          <th>Номер договора</th>
+          <th>Дата заключения</th>
+          <th>Контрагент</th>
+          <th>Предмет договора</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for task in page_obji %}
+        <tr>
+          <td>{{ task.title }}</td>
+          <td>{{ task.deadline }}</td>
+          <td>{{ task.description }}</td>
+          <td>{{ task.priority }}</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="4">Нет доступных договоров</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <div class="paginations">
+      {% if page_obji.has_previous %}
+        <a href="?page={{ page_obji.previous_page_number }}">« Назад</a>
+      {% endif %}
+    
+      <span>Страница {{ page_obji.number }} из {{ page_obji.paginator.num_pages }}</span>
+    
+      {% if page_obji.has_next %}
+        <a href="?page={{ page_obji.next_page_number }}">Вперёд »</a>
+      {% endif %}
+    </div>
+
+    <form action = "{% url 'add_task' %}" method="post">
+      {% csrf_token %}
+      <label for="priority">Тип задачи:</label><br />
+      <select id="priority" name="priority">
+        <option value="low">Строительство</option>
+        <option value="medium">Закупка</option>
+        <option value="high">Оформление отчетов</option>
+      </select><br /><br />
+
+      <label for="title">Тема задачи:</label><br />
+      <input type="text" id="title" name="title" required /><br /><br />
+
+      <label for="description">Описание:</label><br />
+      <textarea id="description" name="description" rows="4" required></textarea><br /><br />
+
+      <label for="deadline">Срок выполнения:</label><br />
+      <input type="date" id="deadline" name="deadline" required /><br /><br />
+
+      <label for="priority">Приоритет:</label><br />
+      <select id="priority" name="priority">
+        <option value="Низкий">Низкий</option>
+        <option value="medium">Средний</option>
+        <option value="high">Высокий</option>
+      </select><br /><br />
+
+      <button type="submit">Добавить файл проекта</button>
+      <button type="submit">Добавить задачу</button>
+      
+    </form>
+  </main>
+  {%endblock%}

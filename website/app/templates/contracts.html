@@ -1,0 +1,72 @@
+{%extends 'base.html'%}
+{%block title %}Тест{%endblock%}
+{%block content%}
+{% load static %}
+  <main class="main-content">
+    <section class="content">
+      <h2>Список договоров</h2>
+
+      <table class="contracts-table">
+        <thead>
+          <tr>
+            <th>Номер договора</th>
+            <th>Дата заключения</th>
+            <th>Контрагент</th>
+            <th>Предмет договора</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for contract in page_obj %}
+          <tr>
+            <td>{{ contract.contract_number }}</td>
+            <td>{{ contract.contract_date }}</td>
+            <td>{{ contract.partner }}</td>
+            <td>{{ contract.subject }}</td>
+          </tr>
+          {% empty %}
+          <tr><td colspan="4">Нет доступных договоров</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <div class="paginations">
+        {% if page_obj.has_previous %}
+          <a href="?page={{ page_obj.previous_page_number }}">« Назад</a>
+        {% endif %}
+      
+        <span>Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}</span>
+      
+        {% if page_obj.has_next %}
+          <a href="?page={{ page_obj.next_page_number }}">Вперёд »</a>
+        {% endif %}
+      </div>
+
+      <h3>Добавить новый договор</h3>
+      <form action="{% url 'add_contract' %}" method="post">
+        {% csrf_token %}
+        
+        <div class="form-group">
+          <label for="contract_number">Номер договора</label>
+          <input type="text" id="contract_number" name="contract_number" required>
+        </div>
+      
+        <div class="form-group">
+          <label for="contract_date">Дата заключения</label>
+          <input type="date" id="contract_date" name="contract_date" required>
+        </div>
+      
+        <div class="form-group">
+          <label for="partner">Контрагент</label>
+          <input type="text" id="partner" name="partner" required>
+        </div>
+      
+        <div class="form-group">
+          <label for="subject">Предмет договора</label>
+          <input type="text" id="subject" name="subject" required>
+        </div>
+      
+        <button type="submit">Добавить договор</button>
+      </form>
+      
+    </section>
+  </main>
+  {%endblock%}

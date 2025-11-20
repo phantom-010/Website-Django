@@ -1,0 +1,62 @@
+{%extends 'base.html'%}
+{%block title %}Здания{%endblock%}
+{%block content%}
+{% load static %}
+  <main class="main-content">
+    <section class="content">
+      <h2>Здания</h2>
+
+      <table class="buildings-table">
+        <thead>
+          <tr>
+            <th>Наименование</th>
+            <th>Адрес</th>
+            <th>Кадастровый номер</th>
+            <th>Статус</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Жилой комплекс «Северный»</td>
+            <td>ул. Ленина, 45</td>
+            <td>12:23:456789</td>
+            <td>Строительство</td>
+          </tr>
+          <tr>
+            <td>Офисное здание «Технопарк»</td>
+            <td>пр. Мира, 89</td>
+            <td>12:23:987654</td>
+            <td>Готово</td>
+          </tr>
+          <tr>
+            <td>Торговый центр «Арбат»</td>
+            <td>ул. Арбат, 22</td>
+            <td>12:23:123456</td>
+            <td>Строительство</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Добавить новое здание</h3>
+      <form action="#" method="post">
+        <div class="form-group">
+          <label for="building-name">Наименование</label>
+          <input type="text" id="building-name" name="building-name" required>
+        </div>
+        <div class="form-group">
+          <label for="building-address">Адрес</label>
+          <input type="text" id="building-address" name="building-address" required>
+        </div>
+        <div class="form-group">
+          <label for="building-cadnum">Кадастровый номер</label>
+          <input type="text" id="building-cadnum" name="building-cadnum" required>
+        </div>
+        <div class="form-group">
+          <label for="building-status">Статус</label>
+          <input type="text" id="building-status" name="building-status" required>
+        </div>
+        <button type="submit">Добавить здание</button>
+      </form>
+    </section>
+  </main>
+  {%endblock%}

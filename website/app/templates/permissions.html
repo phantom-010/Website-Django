@@ -1,0 +1,44 @@
+{%extends 'base.html'%}
+{%block title %}Разрешения{%endblock%}
+{%block content%}
+{% load static %}
+  <main>
+    <h2>Акты и разрешения</h2>
+    <p>Информация о выданных разрешениях на строительство и актах допуска объектов.</p>
+    <table class="partners-table">
+      <tr>
+        <th>Наименование акта</th>
+        <th>Номер</th>
+        <th>Объект</th>
+        <th>Дата выдачи</th>
+      </tr>
+      <tr>
+        <td>Акт допуска на стройку</td>
+        <td>RZ-001</td>
+        <td>ЖК «Речной берег»</td>
+        <td>2025-01-10</td>
+      </tr>
+      <tr>
+        <td>Разрешение на ввод в эксплуатацию</td>
+        <td>RZ-002</td>
+        <td>ТЦ «Гармония»</td>
+        <td>2025-03-21</td>
+      </tr>
+    </table>
+    <h3>Добавить Акт/Разрешение</h3>
+    <form action="#" method="post">
+      <div class="form-group">
+        <label for="contract-number">Наименование акта/разрешения</label>
+        <input type="text" id="material-number" name="material-number" required>
+      </div>
+      <div class="form-group">
+        <label for="contract-name">Номер</label>
+        <input type="text" id="material-name" name="material-name" required>
+      </div>
+      <div class="form-group">
+        <label for="contract-name">Объект</label>
+        <input type="text" id="material-name" name="material-name" required>
+      </div>
+      <button type = "submit">Добавить</button>
+  </main>
+  {%endblock%}

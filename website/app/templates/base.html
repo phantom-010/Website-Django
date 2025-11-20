@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>{%block title%}{%endblock%}</title>
+  <link rel="stylesheet" href="{%static 'css/styles.css'%}">
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/265/265674.png" />
+
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo-block">
+    <img src="https://cdn-icons-png.flaticon.com/512/265/265674.png" alt="Логотип" class="logoi">
+  </div>
+    <div class="logo">Строительная организация</div>
+    <nav class="main-menu">
+      <a href="\">Главная</a>
+      <a href="\contracts">Договора</a>
+      <a href="\buildings">Здания</a>
+      <a href="\partners">Контрагенты</a>
+      <a href="\permissions">Разрешения</a>
+      <a href="\materials">Материалы</a>
+      <a href="\auth">Вход</a>
+      <a href="\task">Добавить задачу</a>
+    </nav>
+
+    </header>
+    {%block content%}
+    {%endblock%}
+    <!-- Футер -->
+    <footer>
+      <p>© 2025 Строительная организация. Все права защищены.</p>
+      <p>Разработано для учебных целей</p>
+    </footer>
+  </main>
+
+  
+</body>
+</html>
