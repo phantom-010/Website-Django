@@ -7,6 +7,6 @@
 В этой вкладке пользователь(админ) может добавить информацию по текущему договору или новому.
 <img width="1898" height="893" alt="image" src="https://github.com/user-attachments/assets/710d8442-1f8a-49d2-8f1c-c2493b32acab" />
 В этой вкладке пользователь может отследить статус строительства объектов(для админа есть возможность редактировать) 
-<img width="1898" height="893" alt="image" src="https://github.com/user-attachments/assets/2bd8adb6-3a92-401f-a46c-25d5c7c8133b" />
+
 Сайт написан на яп python с использованием фреймворка Django. Фронтенд написан на чистом Html и Css
 
